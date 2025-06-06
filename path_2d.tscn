@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbw3e0jbq2s5i"]
+
+[ext_resource type="Script" uid="uid://85vmxe3swp5a" path="res://path_2d.gd" id="1_f5thg"]
+[ext_resource type="PackedScene" uid="uid://cqpb7hkxm72o" path="res://rat.tscn" id="2_7n2fh"]
+
+[sub_resource type="Curve2D" id="Curve2D_3h4et"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 44, -23, 0, 0, 0, 0, 46, 143, 0, 0, 0, 0, 336, 143, 0, 0, 0, 0, 335, 247, 0, 0, 0, 0, 712, 246, 0, 0, 0, 0, 717, 435, 0, 0, 0, 0, 911, 433, 0, 0, 0, 0, 915, 530, 0, 0, 0, 0, 1165, 529)
+}
+point_count = 9
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_3h4et")
+script = ExtResource("1_f5thg")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(44.6427, 30.3407)
+rotation = 1.55875
+progress = 53.3497
+rotates = false
+
+[node name="rat" parent="PathFollow2D" instance=ExtResource("2_7n2fh")]
+position = Vector2(22.4683, 44.2739)
+rotation = -1.55875
+scale = Vector2(1, 1)
